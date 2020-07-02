@@ -53,6 +53,9 @@ namespace DatingApp.API.Controllers
         [HttpPost("login")]
         public async Task<object> Login(UserForLoginDto dto)
         {
+            
+            //throw new Exception("Jerlin says no");
+            
             var userFromRepo = await _repo.Login(dto.Username.ToLower(), dto.Password);
 
             if(userFromRepo == null)
